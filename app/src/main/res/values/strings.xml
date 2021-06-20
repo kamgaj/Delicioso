@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Delicioso</string>
+    <string name="najlatwiejsze_przepisy">Najłatwiejsze przepisy</string>
+    <string name="najtrudniejsze_przepisy">Najtrudniejsze przepisy</string>
+    <string name="strona_glowna">Strona główna</string>
+    <string name="szukaj">Szukaj</string>
+    <string name="nazwa">Nazwa</string>
 </resources>
