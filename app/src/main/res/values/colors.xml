@@ -3,12 +3,12 @@
     <color name="red_200">#BF0D00</color>
     <color name="red_100">#F81100</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_200">#F81100</color> <!-- #FF03DAC5-->
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="temp">#BDBDBD</color>
-    <color name="mainColor">#008516</color>
+    <color name="mainColor">#BF0D00</color><!--    #BF0D00-->
 
     <color name="colorPrimary">#008516</color>
     <color name="colorPrimaryDark">#A4D8AD</color>
