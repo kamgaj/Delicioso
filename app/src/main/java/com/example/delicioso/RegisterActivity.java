@@ -38,6 +38,10 @@ import static com.example.delicioso.R.*;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    boolean isEmailValid(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
     EditText userName, userMail,userPassword;
     FirebaseAuth firebaseAuth;
     ProgressBar progressBar;
@@ -63,71 +67,91 @@ public class RegisterActivity extends AppCompatActivity {
         String email = userMail.getText().toString();
         String password = userPassword.getText().toString();
 
-        if (TextUtils.isEmpty(name)) {
-            userName.setError("Name is Required.");
-            return;
+        if(name.contains(" ")){
+            Toast.makeText(getApplicationContext(), "Nazwa użytkownika nie może zawierać spacji", Toast.LENGTH_LONG).show();
         }
-
-        if (TextUtils.isEmpty(email)) {
-            userMail.setError("Email is Required.");
-            return;
+        else if(password.contains(" ")){
+            Toast.makeText(getApplicationContext(), "Hasło nie może zawierać spacji", Toast.LENGTH_LONG).show();
         }
-
-        if (TextUtils.isEmpty(password)) {
-            userPassword.setError("Password is Required.");
-            return;
-        } else if(password.length() < 6) {
-            userPassword.setError("Password is too short.");
-            return;
+        else if(email.contains(" ")){
+            Toast.makeText(getApplicationContext(), "Email nie może zawierać spacji", Toast.LENGTH_LONG).show();
         }
+        else if(name.length()<5){
+            Toast.makeText(getApplicationContext(), "Nazwa użytkownika musi zawierać minimum 5 znaków", Toast.LENGTH_LONG).show();
+        }
+        else if(password.length()<8){
+            Toast.makeText(getApplicationContext(), "Hasło musi zawierać minimum 8 znaków", Toast.LENGTH_LONG).show();
+        }
+        else if(!name.matches("[a-zA-Z0-9]*")){
+            Toast.makeText(getApplicationContext(), "Nazwa użytkownika zawiera znaki specjalne", Toast.LENGTH_LONG).show();
+        }
+        else if (!isEmailValid(email)){
+            Toast.makeText(getApplicationContext(), "Błędny adres email", Toast.LENGTH_LONG).show();
+        }
+        else {
+            progressBar.setVisibility(View.VISIBLE);
 
-        progressBar.setVisibility(View.VISIBLE);
+            firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
 
-        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()) {
 
-                if(task.isSuccessful()) {
+                        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                        firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public  void onSuccess(Void unused) {
+                                Toast.makeText(RegisterActivity.this, "Verification Email has been sent.", Toast.LENGTH_SHORT).show();
 
-                    FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-                    firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            Toast.makeText(RegisterActivity.this, "Verification Email has been sent.", Toast.LENGTH_SHORT).show();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.w(TAG, "Error! Email not sent. "+ e.getMessage());
-                        }
-                    });
+                                userID = firebaseAuth.getCurrentUser().getUid();
+                                DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
 
-                    //Toast.makeText(RegisterPage.this, "User created", Toast.LENGTH_SHORT).show();
+                                Map<String, Object> user = new HashMap<>();
+                                user.put("name",name);
+                                user.put("email",email);
 
-                    userID = firebaseAuth.getCurrentUser().getUid();
-                    DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
+                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error adding document", e);
+                                    }
+                                });
 
-                    Map<String, Object> user = new HashMap<>();
-                    user.put("name",name);
-                    user.put("email",email);
+                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                        .setDisplayName(name).build();
 
-                    documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.w(TAG, "Error adding document", e);
-                        }
-                    });
+                                firebaseUser.updateProfile(profileUpdates)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    Log.d(TAG, "User profile updated.");
+                                                }
+                                            }
+                                        });
 
-                    startActivity(new Intent( RegisterActivity.this, MainActivity.class));
-                } else {
-                    Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                firebaseAuth.signOut();
+                                Intent goToLogin = new Intent(RegisterActivity.this, LoginActivity.class);
+                                goToLogin.putExtra("disableBackButton", 2137);
+                                startActivity(goToLogin);
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error! Email not sent. "+ e.getMessage());
+                            }
+                        });
+                    } else {
+                        Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
-        });
+            });
+        }
+
     }
 }
