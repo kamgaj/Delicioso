@@ -77,7 +77,7 @@
 <!--        app:srcCompat="@drawable/profile" />-->
 
     <TextView
-        android:id="@+id/NickName"
+        android:id="@+id/mainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/strona_glowna"
@@ -127,7 +127,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/newestMovies"
+                android:id="@+id/easiestRecipes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -145,17 +145,17 @@
                 android:layout_height="182dp"
                 android:background="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newestMovies">
+                app:layout_constraintTop_toBottomOf="@+id/easiestRecipes">
 
                 <LinearLayout
-                    android:id="@+id/RecipesLinearLayout"
+                    android:id="@+id/easiestRecipesLinearLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"></LinearLayout>
             </HorizontalScrollView>
 
             <TextView
-                android:id="@+id/bestReviews"
+                android:id="@+id/hardestRecipes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -172,10 +172,10 @@
                 android:layout_height="182dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bestReviews">
+                app:layout_constraintTop_toBottomOf="@+id/hardestRecipes">
 
                 <LinearLayout
-                    android:id="@+id/bestReviewsFilmsLinearLayout"
+                    android:id="@+id/hardestRecipesLinearLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
@@ -183,32 +183,32 @@
                     app:layout_constraintTop_toTopOf="parent"></LinearLayout>
             </HorizontalScrollView>
 
-            <TextView
-                android:id="@+id/Discounts"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text=""
-                android:textColor="#000000"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"
-                app:layout_constraintVertical_bias="0" />
+<!--            <TextView-->
+<!--                android:id="@+id/Discounts"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:text=""-->
+<!--                android:textColor="#000000"-->
+<!--                android:textSize="24sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"-->
+<!--                app:layout_constraintVertical_bias="0" />-->
 
-            <HorizontalScrollView
-                android:id="@+id/horizontalScrollView3"
-                android:layout_width="wrap_content"
-                android:layout_height="182dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Discounts">
+<!--            <HorizontalScrollView-->
+<!--                android:id="@+id/horizontalScrollView3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="182dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/Discounts">-->
 
-                <LinearLayout
-                    android:id="@+id/DiscountsLinearLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"></LinearLayout>
-            </HorizontalScrollView>
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/DiscountsLinearLayout"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="horizontal"></LinearLayout>-->
+<!--            </HorizontalScrollView>-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
