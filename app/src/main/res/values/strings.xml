@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">Delicioso</string>
-    <string name="najlatwiejsze_przepisy">Najłatwiejsze przepisy</string>
-    <string name="najtrudniejsze_przepisy">Najtrudniejsze przepisy</string>
-    <string name="strona_glowna">Strona główna</string>
-    <string name="szukaj">Szukaj</string>
-    <string name="nazwa">Nazwa</string>
+    <string name="easiest_recipes">Najłatwiejsze przepisy</string>
+    <string name="hardest_recipes">Najtrudniejsze przepisy</string>
+    <string name="main_page">Strona główna</string>
+    <string name="search">Szukaj</string>
+    <string name="name">Nazwa</string>
+    <string name="recipe">Przepis</string>
+    <string name="difficulty">Trudność</string>
+    <string name="servings">Ilość porcji</string>
+    <string name="ingredients">Składniki</string>
+    <string name="preparation">Przygotowanie</string>
 </resources>
