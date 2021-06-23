@@ -72,7 +72,7 @@
             android:button="@null"
             android:checked="false"
             android:gravity="center"
-            android:text="@string/skladnik"
+            android:text="@string/skladniki"
             android:textColor="@drawable/radiobutton_text_colors" />
     </RadioGroup>
     <androidx.appcompat.widget.Toolbar

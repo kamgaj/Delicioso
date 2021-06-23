@@ -92,7 +92,7 @@ public class SearchActivity extends AppCompatActivity {
                     start = start.substring(0, 1).toUpperCase() + start.substring(1);
                     String end = search.getText().toString() + "\uf8ff";
                     end = end.substring(0, 1).toUpperCase() + end.substring(1);
-                    db.collection("Movies")
+                    db.collection("Recipes")
                             .orderBy(NAME_WORD)
                             .startAt(start)
                             .endAt(end)
@@ -161,7 +161,6 @@ public class SearchActivity extends AppCompatActivity {
                                     }
                                     ingredientsArray = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, titles);
                                     searchView.setAdapter(ingredientsArray);
-
                                     //goToSearchedMovieDescription();
                                 }
                             }
