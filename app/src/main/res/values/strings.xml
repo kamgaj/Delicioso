@@ -9,7 +9,6 @@
     <string name="skladniki">Składniki</string>
     <string name="home_button">home button</string>
     <string name="search_button">search button</string>
-
     <string-array name="ingredients">
         <item>1 podwójny filet kurczaka</item>
         <item>2 ząbki czosnku</item>
@@ -26,4 +25,14 @@
         <item>1 łyżka oliwy</item>
         <item>500 g filetu z kurczaka</item>
     </string-array>
+    <string name="easiest_recipes">Najłatwiejsze przepisy</string>
+    <string name="hardest_recipes">Najtrudniejsze przepisy</string>
+    <string name="main_page">Strona główna</string>
+    <string name="search">Szukaj</string>
+    <string name="name">Nazwa</string>
+    <string name="recipe">Przepis</string>
+    <string name="difficulty">Trudność</string>
+    <string name="servings">Ilość porcji</string>
+    <string name="ingredients">Składniki</string>
+    <string name="preparation">Przygotowanie</string>
 </resources>

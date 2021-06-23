@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, RecipeActivity.class);
-                    intent.putExtra("Movie_title", recipesList.get(finalI).getName());
+                    intent.putExtra("RecipeName", recipesList.get(finalI).getName());
                     startActivity(intent);
                 }
             });
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, RecipeActivity.class);
-                    intent.putExtra("Movie_title", recipesList.get(finalI).getName());
+                    intent.putExtra("RecipeName", recipesList.get(finalI).getName());
                     startActivity(intent);
                 }
             });
