@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Delicioso</string>
+<<<<<<< HEAD
 
     <string name="easiest_recipes">Najłatwiejsze przepisy</string>
     <string name="hardest_recipes">Najtrudniejsze przepisy</string>
@@ -11,6 +12,8 @@
     <string name="servings">Ilość porcji</string>
     <string name="ingredients">Składniki</string>
     <string name="preparation">Przygotowanie</string>
+=======
+>>>>>>> f60d6aab9b6f2cd0bdfc42e0fdf5ffb872b28256
     <string name="najlatwiejsze_przepisy">Najłatwiejsze przepisy</string>
     <string name="najtrudniejsze_przepisy">Najtrudniejsze przepisy</string>
     <string name="strona_glowna">Strona główna</string>
@@ -36,5 +39,18 @@
         <item>1 łyżka oliwy</item>
         <item>500 g filetu z kurczaka</item>
     </string-array>
+<<<<<<< HEAD
 >>>>>>> kamgaj
+=======
+    <string name="easiest_recipes">Najłatwiejsze przepisy</string>
+    <string name="hardest_recipes">Najtrudniejsze przepisy</string>
+    <string name="main_page">Strona główna</string>
+    <string name="search">Szukaj</string>
+    <string name="name">Nazwa</string>
+    <string name="recipe">Przepis</string>
+    <string name="difficulty">Trudność</string>
+    <string name="servings">Ilość porcji</string>
+    <string name="ingredients">Składniki</string>
+    <string name="preparation">Przygotowanie</string>
+>>>>>>> f60d6aab9b6f2cd0bdfc42e0fdf5ffb872b28256
 </resources>

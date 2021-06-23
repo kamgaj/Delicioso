@@ -16,8 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".RecipeActivity" />
         <activity android:name=".SearchActivity"/>
+=======
+      <activity android:name=".SearchActivity"/>
+      <activity android:name=".RecipeActivity" />
+>>>>>>> f60d6aab9b6f2cd0bdfc42e0fdf5ffb872b28256
     </application>
 
 </manifest>
