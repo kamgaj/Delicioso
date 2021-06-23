@@ -61,7 +61,7 @@
             android:textColor="@drawable/radiobutton_text_colors" />
 
         <RadioButton
-            android:id="@+id/ingredient"
+            android:id="@+id/serving"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="1dp"
@@ -72,7 +72,7 @@
             android:button="@null"
             android:checked="false"
             android:gravity="center"
-            android:text="@string/skladniki"
+            android:text="@string/servings"
             android:textColor="@drawable/radiobutton_text_colors" />
     </RadioGroup>
     <androidx.appcompat.widget.Toolbar
