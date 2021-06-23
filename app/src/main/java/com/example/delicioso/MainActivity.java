@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<HomeRecipeListItem> easiestRecipes = new ArrayList<>();
     ArrayList<HomeRecipeListItem> hardestRecipes = new ArrayList<>();
+    ImageView searchButton;
     Chip search;
     private final FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "HomeActivity";
@@ -43,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
 
         getEasiestRecipes();
         getHardestRecipes();
+        searchButton = findViewById(R.id.searchButton);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
+            }
+        });
     }
 
     private void getEasiestRecipes() {
