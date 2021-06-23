@@ -18,8 +18,6 @@
         </activity>
         <activity android:name=".RecipeActivity" />
         <activity android:name=".SearchActivity"/>
-      <activity android:name=".SearchActivity"/>
-      <activity android:name=".RecipeActivity" />
     </application>
 
 </manifest>
