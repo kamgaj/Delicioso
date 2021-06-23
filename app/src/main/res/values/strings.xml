@@ -16,23 +16,10 @@
     <string name="szukaj">Szukaj</string>
     <string name="nazwa">Nazwa</string>
     <string name="wyszukiwarka">Wyszukiwarka</string>
-    <string name="skladniki">Składniki</string>
     <string name="home_button">home button</string>
     <string name="search_button">search button</string>
-    <string-array name="ingredients">
-        <item>1 podwójny filet kurczaka</item>
-        <item>2 ząbki czosnku</item>
-        <item>5 łyżek oliwy extra</item>
-        <item>300 g makaronu np. penne</item>
-        <item>bazylia</item>
-        <item>50 g orzeszków pinii</item>
-        <item>50 g tartego sera grana padano</item>
-        <item>sól, pieprz</item>
-        <item>350 g świeżego łososia</item>
-        <item>2 łyżki marynaty teriyaki</item>
-        <item>1 i 1/2 litra bulionu drobiowego lub warzywnego</item>
-        <item>400 g filetów dorsza</item>
-        <item>1 łyżka oliwy</item>
-        <item>500 g filetu z kurczaka</item>
+    <string-array name="servings">
+        <item>3</item>
+        <item>4</item>
     </string-array>
 </resources>

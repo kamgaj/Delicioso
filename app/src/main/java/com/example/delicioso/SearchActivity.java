@@ -30,11 +30,11 @@ import java.util.Objects;
 public class SearchActivity extends AppCompatActivity {
     private final FirebaseFirestore db= FirebaseFirestore.getInstance();
     ArrayAdapter<String> namesArray;
-    ArrayAdapter<String> ingredientsArray;
+    ArrayAdapter<String> servingsArray;
     ListView searchView;
     RadioButton name;
-    RadioButton ingredient;
-    boolean ifIngredient = false;
+    RadioButton serving;
+    boolean ifServing = false;
     ImageView home;
     EditText search;
     public static final String NAME_WORD = "Name";
@@ -44,7 +44,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_page);
 
-        ingredient = findViewById(R.id.ingredient);
+        serving = findViewById(R.id.serving);
         name = findViewById(R.id.name);
         home = findViewById(R.id.homeButton);
         searchView = findViewById(R.id.searchListView);
@@ -60,8 +60,8 @@ public class SearchActivity extends AppCompatActivity {
                 search.requestFocus();
                 InputMethodManager imm = (InputMethodManager) getSystemService(getApplicationContext().INPUT_METHOD_SERVICE);
                 imm.showSoftInput(search, InputMethodManager.SHOW_IMPLICIT);
-                ifIngredient=false;
-                //goToSearchedMovieDescription();
+                ifServing=false;
+                goToSearchedRecipeDescription();
             }
         });
 
@@ -72,12 +72,12 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        ingredient.setOnClickListener(new View.OnClickListener() {
+        serving.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 search.getText().clear();
                 search.setEnabled(false);
-                queryIngredientsFromFirebase();
+                queryServingsFromFirebase();
                 getStringFromXML();
             }
         });
@@ -127,9 +127,9 @@ public class SearchActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        if(ifIngredient){
-            ingredient.performClick();
-            ifIngredient = false;
+        if(ifServing){
+            serving.performClick();
+            ifServing = false;
         }
         else{
             finish();
@@ -137,31 +137,33 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void getStringFromXML() {
-        String[] ingredientsFromXML = getResources().getStringArray(R.array.ingredients);
-        ingredientsArray = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, ingredientsFromXML);
-        searchView.setAdapter(ingredientsArray);
+        String[] servingsFromXML = getResources().getStringArray(R.array.servings);
+        servingsArray = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, servingsFromXML);
+        searchView.setAdapter(servingsArray);
     }
 
-    private void queryIngredientsFromFirebase() {
+    private void queryServingsFromFirebase() {
         searchView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ifIngredient=true;
-                String selectedGenre = (String) parent.getItemAtPosition(position);
+                ifServing=true;
+                String selectedServing = (String) parent.getItemAtPosition(position);
+                System.out.println(Integer.valueOf(selectedServing));
                 db.collection("Recipes")
-                        .whereArrayContains("Ingredients", selectedGenre)
+                        .whereEqualTo("Servings", Integer.valueOf(selectedServing))
+                        //.whereArrayContains("Servings", Integer.valueOf(selectedServing))
                         .get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                 if(task.isSuccessful()) {
-                                    List<String> titles = new ArrayList<>();
+                                    List<String> names = new ArrayList<>();
                                     for(QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
-                                        titles.add(document.getString(NAME_WORD));
+                                        names.add(document.getString(NAME_WORD));
                                     }
-                                    ingredientsArray = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, titles);
-                                    searchView.setAdapter(ingredientsArray);
-                                    //goToSearchedMovieDescription();
+                                    servingsArray = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, names);
+                                    searchView.setAdapter(servingsArray);
+                                    goToSearchedRecipeDescription();
                                 }
                             }
                         });
@@ -169,15 +171,15 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
-//    private void goToSearchedRecipeDescription() {
-//        searchView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                String selectedItem = (String) parent.getItemAtPosition(position);
-//                Intent intent = new Intent(SearchActivity.this, DescriptionActivity.class);
-//                //intent.putExtra("Movie_title", selectedItem);
-//                startActivity(intent);
-//            }
-//        });
-//    }
+    private void goToSearchedRecipeDescription() {
+        searchView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = (String) parent.getItemAtPosition(position);
+                Intent intent = new Intent(SearchActivity.this, RecipeActivity.class);
+                intent.putExtra("RecipeName", selectedItem);
+                startActivity(intent);
+            }
+        });
+    }
 }
