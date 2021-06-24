@@ -36,6 +36,7 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="176dp"
         android:layout_marginBottom="16dp"
+        android:fontFamily="@font/kaushanscript"
         android:text="@string/recipe"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -62,8 +63,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="390dp"
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/nameText"
@@ -83,7 +84,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.447"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/difficultyText"

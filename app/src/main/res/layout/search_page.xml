@@ -140,6 +140,7 @@
         android:id="@+id/NickName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/kaushanscript"
         android:text="@string/wyszukiwarka"
         android:textColor="#FFFFFF"
         android:textSize="30sp"

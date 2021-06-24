@@ -4,6 +4,6 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/kaushanscript"
+        android:font="@font/merriweather_regular"
         />
 </font-family>
