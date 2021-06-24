@@ -39,7 +39,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/toolbarDown"
         app:layout_constraintStart_toStartOf="@+id/toolbarDown"
         app:layout_constraintTop_toTopOf="@+id/toolbarDown"
-        app:srcCompat="@drawable/home" />
+        app:srcCompat="@drawable/ic_home_40_dp_red" />
 
     <ImageButton
         android:id="@+id/searchButton"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toStartOf="@+id/toolbarDown"
         app:layout_constraintStart_toEndOf="@+id/homeButton"
         app:layout_constraintTop_toTopOf="@+id/toolbarDown"
-        app:srcCompat="@drawable/search" />
+        app:srcCompat="@drawable/ic_search_40_dp_red" />
 
 <!--    <ImageButton-->
 <!--        android:id="@+id/ticketButton"-->
@@ -76,12 +76,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/searchButton"
         app:layout_constraintTop_toTopOf="@+id/toolbarDown"
-        app:srcCompat="@drawable/ic_logout_40_dp" />
+        app:srcCompat="@drawable/ic_logout_40_dp_red" />
 
     <TextView
         android:id="@+id/mainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/kaushanscript"
         android:text="@string/main_page"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -133,6 +134,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/kaushanscript"
                 android:text="@string/easiest_recipes"
                 android:textColor="#000000"
                 android:textSize="24sp"
@@ -161,6 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/kaushanscript"
                 android:text="@string/hardest_recipes"
                 android:textColor="#000000"
                 android:textSize="24sp"
