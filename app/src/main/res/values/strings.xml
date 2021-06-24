@@ -16,8 +16,6 @@
     <string name="szukaj">Szukaj</string>
     <string name="nazwa">Nazwa</string>
     <string name="wyszukiwarka">Wyszukiwarka</string>
-    <string name="home_button">home button</string>
-    <string name="search_button">search button</string>
     <string-array name="servings">
         <item>3</item>
         <item>4</item>
