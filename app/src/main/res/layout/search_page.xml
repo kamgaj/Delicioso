@@ -108,7 +108,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/toolbarDown"
         app:layout_constraintStart_toStartOf="@+id/toolbarDown"
         app:layout_constraintTop_toTopOf="@+id/toolbarDown"
-        app:srcCompat="@drawable/home"/>
+        app:srcCompat="@drawable/ic_home_40_dp_red"/>
 
     <ImageButton
         android:id="@+id/searchButton"
@@ -120,7 +120,7 @@
         app:layout_constraintEnd_toStartOf="@+id/toolbarDown"
         app:layout_constraintStart_toEndOf="@+id/homeButton"
         app:layout_constraintTop_toTopOf="@+id/toolbarDown"
-        app:srcCompat="@drawable/search" />
+        app:srcCompat="@drawable/ic_search_40_dp_red" />
 
     <ImageButton
         android:id="@+id/logoutButton"
@@ -134,7 +134,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/searchButton"
         app:layout_constraintTop_toTopOf="@+id/toolbarDown"
-        app:srcCompat="@drawable/ic_logout_40_dp" />
+        app:srcCompat="@drawable/ic_logout_40_dp_red" />
 
     <TextView
         android:id="@+id/NickName"
