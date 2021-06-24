@@ -91,7 +91,7 @@
         app:layout_constraintTop_toTopOf="@+id/toolbarUP" />
 
     <com.google.android.material.chip.Chip
-        android:id="@+id/chip4"
+        android:id="@+id/searchChip"
         android:layout_width="343dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
@@ -104,11 +104,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search"
-        app:layout_constraintBottom_toBottomOf="@+id/chip4"
-        app:layout_constraintEnd_toEndOf="@+id/chip4"
+        app:layout_constraintBottom_toBottomOf="@+id/searchChip"
+        app:layout_constraintEnd_toEndOf="@+id/searchChip"
         app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintStart_toStartOf="@+id/chip4"
-        app:layout_constraintTop_toTopOf="@+id/chip4"
+        app:layout_constraintStart_toStartOf="@+id/searchChip"
+        app:layout_constraintTop_toTopOf="@+id/searchChip"
         app:layout_constraintVertical_bias="0.516" />
 
     <androidx.core.widget.NestedScrollView
@@ -118,7 +118,7 @@
         app:layout_constraintBottom_toTopOf="@+id/toolbarDown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chip4">
+        app:layout_constraintTop_toBottomOf="@+id/searchChip">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

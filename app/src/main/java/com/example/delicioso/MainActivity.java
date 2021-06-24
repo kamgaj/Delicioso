@@ -52,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, SearchActivity.class));
             }
         });
+
+        search = findViewById(R.id.searchChip);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToSearch = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(goToSearch);
+            }
+        });
     }
 
     private void getEasiestRecipes() {
@@ -143,6 +152,12 @@ public class MainActivity extends AppCompatActivity {
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent( MainActivity.this, LoginActivity.class));
+    }
+
+    @Override
+    public void onBackPressed() {
+            super.onBackPressed();
+            finishAffinity();
     }
 }
 
