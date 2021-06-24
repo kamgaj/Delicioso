@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(password)) {
             userMail.setError("Hasło nie może być puste.");
             return;
-        } else if(password.length() < 6) {
+        } else if(password.length() < 8) {
             userMail.setError("Hasło jest zbyt krótkie.");
             return;
         }
@@ -67,15 +67,18 @@ public class LoginActivity extends AppCompatActivity {
                 if(firebaseAuth.getCurrentUser() != null ) {
                     if (firebaseAuth.getCurrentUser().isEmailVerified()) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Pomyślnie zalogowano!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Pomyślnie zalogowano!", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         } else {
-                            Toast.makeText(LoginActivity.this, "Błąd!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Email lub hasło są niepoprawne!", Toast.LENGTH_LONG).show();
                         }
                     }
                     else{
-                        Toast.makeText(LoginActivity.this, "Email nie został potwierdzony!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Email nie został potwierdzony!", Toast.LENGTH_LONG).show();
                     }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Email lub hasło są niepoprawne!", Toast.LENGTH_LONG).show();
                 }
             }
         });
