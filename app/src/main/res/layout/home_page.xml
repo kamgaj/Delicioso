@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -44,9 +45,10 @@
         android:id="@+id/searchButton"
         android:layout_width="38.33dp"
         android:layout_height="40dp"
-        android:layout_marginStart="45dp"
+        android:layout_marginEnd="25dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/toolbarDown"
+        app:layout_constraintEnd_toStartOf="@+id/toolbarDown"
         app:layout_constraintStart_toEndOf="@+id/homeButton"
         app:layout_constraintTop_toTopOf="@+id/toolbarDown"
         app:srcCompat="@drawable/search" />
@@ -62,19 +64,19 @@
 <!--        app:layout_constraintTop_toTopOf="@+id/toolbarDown"-->
 <!--        app:srcCompat="@drawable/ticket"/>-->
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/profileButton"-->
-<!--        android:layout_width="38.33dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:layout_marginStart="45dp"-->
-<!--        android:layout_marginEnd="78dp"-->
-<!--        android:background="#FFFFFF"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/toolbarDown"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/toolbarDown"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/ticketButton"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/toolbarDown"-->
-<!--        app:layout_constraintVertical_bias="0.466"-->
-<!--        app:srcCompat="@drawable/profile" />-->
+    <ImageButton
+        android:id="@+id/logoutButton"
+        android:layout_width="38.33dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="60dp"
+        android:background="#FFFFFF"
+        android:onClick="logout"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbarDown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/searchButton"
+        app:layout_constraintTop_toTopOf="@+id/toolbarDown"
+        app:srcCompat="@drawable/ic_logout_40_dp" />
 
     <TextView
         android:id="@+id/mainPage"
