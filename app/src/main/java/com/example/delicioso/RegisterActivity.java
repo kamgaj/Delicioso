@@ -122,19 +122,6 @@ public class RegisterActivity extends AppCompatActivity {
                                     }
                                 });
 
-                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                        .setDisplayName(name).build();
-
-                                firebaseUser.updateProfile(profileUpdates)
-                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                if (task.isSuccessful()) {
-                                                    Log.d(TAG, "User profile updated.");
-                                                }
-                                            }
-                                        });
-
                                 firebaseAuth.signOut();
                                 Intent goToLogin = new Intent(RegisterActivity.this, LoginActivity.class);
                                 goToLogin.putExtra("disableBackButton", 2137);
