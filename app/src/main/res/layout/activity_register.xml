@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:onClick="registerUser"
-        android:text="Zarejestruj"
+        android:text="Zarejestruj się"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />

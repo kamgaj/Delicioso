@@ -93,12 +93,12 @@ public class RegisterActivity extends AppCompatActivity {
                     firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(RegisterActivity.this, "Verification Email has been sent.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Email weryfikacyjny został wysłany.", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Log.w(TAG, "Error! Email not sent. "+ e.getMessage());
+                            Log.w(TAG, "Błąd! Email nie został wysłany. "+ e.getMessage());
                         }
                     });
 
@@ -123,7 +123,7 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     });
 
-                    startActivity(new Intent( RegisterActivity.this, MainActivity.class));
+                    startActivity(new Intent( RegisterActivity.this, LoginActivity.class));
                 } else {
                     Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
