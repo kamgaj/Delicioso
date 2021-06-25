@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -52,17 +51,6 @@
         app:layout_constraintStart_toEndOf="@+id/homeButton"
         app:layout_constraintTop_toTopOf="@+id/toolbarDown"
         app:srcCompat="@drawable/ic_search_40_dp_red" />
-
-<!--    <ImageButton-->
-<!--        android:id="@+id/ticketButton"-->
-<!--        android:layout_width="38.33dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:layout_marginStart="45dp"-->
-<!--        android:background="#FFFFFF"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/toolbarDown"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/searchButton"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/toolbarDown"-->
-<!--        app:srcCompat="@drawable/ticket"/>-->
 
     <ImageButton
         android:id="@+id/logoutButton"
@@ -187,33 +175,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"></LinearLayout>
             </HorizontalScrollView>
-
-<!--            <TextView-->
-<!--                android:id="@+id/Discounts"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="8dp"-->
-<!--                android:text=""-->
-<!--                android:textColor="#000000"-->
-<!--                android:textSize="24sp"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"-->
-<!--                app:layout_constraintVertical_bias="0" />-->
-
-<!--            <HorizontalScrollView-->
-<!--                android:id="@+id/horizontalScrollView3"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="182dp"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/Discounts">-->
-
-<!--                <LinearLayout-->
-<!--                    android:id="@+id/DiscountsLinearLayout"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:orientation="horizontal"></LinearLayout>-->
-<!--            </HorizontalScrollView>-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
